@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* CSS for image in the card */
+        .card_image {
+            max-height: 150px;
+            max-width: 250px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        /* CSS for overall card */
+        .overall_card {
+            height: 250px;
+            width: 250px;
+            margin: 10px;
+            text-align: left;
+            
+        }
+
+        .category_scroll_bar {
+            /* max-height: 200px;  */
+            max-height: 300px;
+            overflow-x: auto;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -50px;
+        }
+    </style>
+    <title>Welcome User</title>
+</head>
+<body>
+  <p>Hello</p>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">User dashboard</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Logout</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div class="container mt-4">
+        <h1 class="mb-4">Grocery Shop</h1>
+        {% for category, products in categories.items() %}
+        <div class="card mb-4">
+            <div class="card-header">{{ category }}</div>
+            <div class="card-body category_scroll_bar">
+                <div class="row">
+                    {% for product in products %}
+                    <div class="col-lg-4 col-md-6 mb-3 ">
+                        <div class="card overall_card">
+                            <img class="card-img-top card_image" src="{{ product.image_link }}" alt="Card image">
+                            <div class="card-body">
+                                <!-- <h5 class="card-title">{{ product.name }}</h5>
+                                <h6 class="card-title">{{ product.price }}</h6>
+                                <button type="button" class="btn btn-outline-warning" style="display: inline-block; text-align: right;">Warning</button>
+                                <p class="card-text">{{ product.description }}</p> -->
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <h6 class="card-title">{{ product.price }}</h6>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-outline-warning">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </body>
+</html>

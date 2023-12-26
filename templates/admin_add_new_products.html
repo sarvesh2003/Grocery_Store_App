@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <form action="/admin_add_new_products" method="POST">
+            <div class="mb-3">
+                <h1>Admin Adding New Products</h1>
+              <label for="pname" class="form-label">Product Name</label>
+              <input type="text" class="form-control" name="pname" id="pname" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="pid" class="form-label">Product ID</label>
+              <input type="text" class="form-control" name="pid" id="pid">
+            </div>
+            <div class="mb-3">
+                <label for="cat" class="form-label">Category</label>
+                <input type="text" class="form-control" name="cat" id="cat">
+              </div>
+            <div class="mb-3">
+              <label for="ppu" class="form-label">Price Per Unit</label>
+              <input type="text" class="form-control" name="ppu" id="ppu">
+            </div>
+            <div class="mb-3">
+                <label for="amount" class="form-label">Available amount</label>
+                <input type="text" class="form-control" name="amount" id="amount">
+              </div>
+              <div class="mb-3">
+                <label for="imlink" class="form-label">Image Link</label>
+                <input type="text" class="form-control" name="imlink" id="imlink">
+              </div>
+              <div class="mb-3">
+                <label for="mdate" class="form-label">Manufacturing Date</label>
+                <input type="text" class="form-control" name="mdate" id="mdate">
+              </div>
+              <div class="mb-3">
+                <label for="exdate" class="form-label">Expiry Date</label>
+                <input type="text" class="form-control" name="exdate" id="exdate">
+              </div>
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+
+          </form>
+
+  <!-- products(ID NUMBER, Name TEXT, Category TEXT, price_per_unit TEXT, amount NUMBER, img_link TEXT, man TEXT, exp TEXT)""" -->
+
+</body>
+
+</html>

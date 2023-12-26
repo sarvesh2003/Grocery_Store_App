@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <form action="/" method="POST">
+            <!-- action -> where to send the submitted data -->
+            <div class="mb-3">
+                <h1>User Login</h1>
+              <label for="uname" class="form-label">Username</label>
+              <!-- for, id should be same -->
+              <input type="text" class="form-control" name="uname" id="uname" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="pass" class="form-label">Password</label>
+              <input type="password" class="form-control" name="pass" id="pass">
+              <!-- type='password' -->
+            </div>
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+
+          </form>
+          <br>
+          <br>
+          <a href="/user_register">New User ?</a>
+          <br>
+          <br>
+          <a href="/admin_login">Are you an Admin ?</a>
+    </div>
+    
+    <!-- container, container-fluid present in boostrap documentation -->
+</body>
+
+</html>

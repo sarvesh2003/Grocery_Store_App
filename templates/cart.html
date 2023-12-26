@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    <title>Cart</title>
+    <style>
+        .product-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product-info {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cart of {{user_name}}</h1>
+    {% for row in product %}
+        <div class="product-card">
+            <!-- <div class="product-info">Product ID: {{ product }}</div>
+            <div class="product-info">Quantity: {{ row }}</div> -->
+            <div class="product-info">Product ID: {{ row[1] }}</div>
+            <div class="product-info">Quantity: {{ row[2] }}</div>
+            <!-- <a href="/user_dashboard">Add few more items</a>
+            <a href="/delete_from_cart/{{row[1]}}">Delete</a>
+            <a href="/edit_quantity/{{row[1]}}">Edit Quantity</a> -->
+            <!-- Add few more items -->
+<button type="button" class="btn btn-light" onclick="window.location.href='/user_dashboard'">Add few more items</button>
+
+<!-- Delete from cart -->
+<button type="button" class="btn btn-secondary" onclick="window.location.href='/delete_from_cart/{{row[1]}}'">Delete</button>
+
+<!-- Edit Quantity -->
+<button type="button" class="btn btn-dark" onclick="window.location.href='/edit_quantity/{{row[1]}}'">Edit Quantity</button>
+
+        </div>
+    {% endfor %}
+    <div>
+        <h3>Grand Total: {{grand_total}}</h3>
+    </div>
+    <br>
+    <form action="/cart_checkout" method="post">
+        <div style="display: flex; align-items: center; justify-content: center; height: 10vh;">
+            <button type="submit" class="btn btn-success" style="display: inline-block;">Checkout</button>
+        </div>
+    </form>
+</body>
+</html>
+

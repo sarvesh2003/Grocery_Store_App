@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Category</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <form action="/edit_category/{{ cat_name }}" method="POST">
+            <div class="mb-3">
+                <h1>Edit Products</h1>
+              <label for="new_name" class="form-label">New Name</label>
+              <input type="text" class="form-control" name="new_name" id="new_name" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+
+          </form>
+
+  <!-- products(ID NUMBER, Name TEXT, Category TEXT, price_per_unit TEXT, amount NUMBER, img_link TEXT, man TEXT, exp TEXT)""" -->
+
+</body>
+
+</html>
